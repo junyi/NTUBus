@@ -1,0 +1,11 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="MaterialDrawerTheme.Light.DarkToolbar">
+        <!-- ...and here we setting appcompat’s color theme attrs -->
+        <item name="colorPrimaryDark">#fff18833</item>
+        <item name="colorPrimary">#fff1a33c</item>
+        <item name="colorAccent">#02A8F3</item>
+    </style>
+
+</resources>
