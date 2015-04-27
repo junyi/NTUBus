@@ -9,4 +9,6 @@ import java.util.List;
 public class BusEtaResponse {
     @ElementList(inline = true, name = "route")
     public List<Route> routes;
+
+
 }

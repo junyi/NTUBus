@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.ntubus.ntubus.entity.BusStop;
 import com.ntubus.ntubus.entity.Route;
+import com.ntubus.ntubus.entity.RouteBusStop;
 import com.parse.Parse;
 import com.parse.ParseObject;
 
@@ -16,6 +17,7 @@ public class BusApplication extends Application {
 //        Parse.enableLocalDatastore(this);
         ParseObject.registerSubclass(BusStop.class);
         ParseObject.registerSubclass(Route.class);
+        ParseObject.registerSubclass(RouteBusStop.class);
         Parse.initialize(this, "mFVYKBkCYyrQWKFvsJ2kqUk7UckugEerwAer40oj", "zCjbkJjkvE7aljhD6mFR0shJKBi9U1AlbkIJ2En1");
 
     }

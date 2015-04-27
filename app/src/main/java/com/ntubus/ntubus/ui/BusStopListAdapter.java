@@ -27,7 +27,7 @@ public class BusStopListAdapter extends AbstractListAdapter<BusStop, BusStopList
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        View view = inflater.inflate(R.layout.list_item_bus_stop, parent, false);
+        View view = inflater.inflate(R.layout.bus_stop_list_item, parent, false);
         return new ViewHolder(view, this);
     }
 
@@ -39,14 +39,9 @@ public class BusStopListAdapter extends AbstractListAdapter<BusStop, BusStopList
     }
 
     @Override
-    public int getItemCount() {
-        return mData.size();
-    }
-
-    @Override
-    public void addItems(List<BusStop> list) {
+    public void setItems(List<BusStop> list) {
         Collections.sort(list);
-        super.addItems(list);
+        super.setItems(list);
     }
 
     @Override
@@ -62,6 +57,9 @@ public class BusStopListAdapter extends AbstractListAdapter<BusStop, BusStopList
         @InjectView(android.R.id.text2)
         TextView roadName;
 
+        @InjectView(R.id.progress)
+        BusProgressView progressView;
+
         ItemClickListener mItemClickListener;
 
         public ViewHolder(View view, ItemClickListener itemClickListener) {
@@ -75,6 +73,11 @@ public class BusStopListAdapter extends AbstractListAdapter<BusStop, BusStopList
         @Override
         public void onClick(View v) {
             mItemClickListener.onItemClick(v, getAdapterPosition());
+            if (progressView.isAnimating()) {
+                progressView.stopAnimation();
+            } else {
+                progressView.startAnimation();
+            }
         }
     }
 }

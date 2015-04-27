@@ -1,4 +1,4 @@
-package com.ntubus.ntubus.ui;
+package com.ntubus.ntubus.widget;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +7,7 @@ import android.view.View;
 
 public class BusRecyclerView extends RecyclerView {
     private View mEmptyView;
+    private boolean mIsAtTop;
 
     private AdapterDataObserver mDataObserver = new AdapterDataObserver() {
         @Override
@@ -51,6 +52,22 @@ public class BusRecyclerView extends RecyclerView {
             mEmptyView.setVisibility(showEmptyView ? VISIBLE : GONE);
             setVisibility(showEmptyView ? GONE : VISIBLE);
         }
+    }
+
+    public boolean isAtTop() {
+        if (getLayoutManager().getChildCount() == 0)
+            return true;
+
+        View child = getLayoutManager().getChildAt(0);
+        if (child != null) {
+            int top = child.getTop() - getPaddingTop() - getLayoutManager().getTopDecorationHeight(child);
+            System.out.println("Top: " + top);
+            return top == 0;
+        } else {
+            System.out.println("Top: top not found!");
+            return false;
+        }
+
     }
 
 }

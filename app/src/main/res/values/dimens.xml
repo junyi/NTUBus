@@ -7,4 +7,6 @@
     <dimen name="standard_margin">16dp</dimen>
     <dimen name="small_margin">8dp</dimen>
     <dimen name="tiny_margin">4dp</dimen>
+
+    <dimen name="tab_height">48dp</dimen>
 </resources>

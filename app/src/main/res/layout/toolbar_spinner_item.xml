@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:drawablePadding="8dp"
+    android:drawableRight="@drawable/abc_spinner_mtrl_am_alpha"
+    android:paddingLeft="@dimen/tiny_margin"
+    android:paddingRight="4dp"
+    android:textColor="@color/md_white_1000" />

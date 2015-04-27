@@ -3,7 +3,6 @@ package com.ntubus.ntubus.ui;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public abstract class AbstractListAdapter<V, K extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<K> {
@@ -17,5 +16,15 @@ public abstract class AbstractListAdapter<V, K extends RecyclerView.ViewHolder> 
     public void addItems(List<V> list) {
         mData.addAll(list);
         notifyDataSetChanged();
+    }
+
+    public void setItems(List<V> list) {
+        mData.clear();
+        mData.addAll(list);
+        notifyDataSetChanged();
+    }
+
+    public void clear() {
+        mData.clear();
     }
 }

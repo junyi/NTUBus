@@ -134,9 +134,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_map, container, false);
+        View view = inflater.inflate(R.layout.map_fragment, container, false);
         ButterKnife.inject(this, view);
-        mMapView.getMapAsync(this);
+//        mMapView.getMapAsync(this);
         return view;
     }
 
@@ -208,7 +208,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     public void onResume() {
         super.onResume();
         mMapView.onResume();
-        handler.post(busPositionRunnable);
+        if (mMap != null)
+            handler.post(busPositionRunnable);
     }
 
     @Override
